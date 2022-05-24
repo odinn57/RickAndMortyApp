@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    android:elevation="4dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/card_background">
+        <ImageView
+            android:id="@+id/img_person"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/ic_foto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/person_photo_text" />
+        <TextView
+            android:id="@+id/txt_person_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:textColor="@color/white"
+            tools:text="Person Name"
+            />
+        <ImageView
+            android:id="@+id/img_status_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_circle_green"
+            app:layout_constraintTop_toBottomOf="@id/txt_person_name"
+            app:layout_constraintStart_toStartOf="@id/txt_person_name"
+            android:contentDescription="@string/person_status_text" />
+        <TextView
+            android:id="@+id/txt_person_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_person_name"
+            app:layout_constraintStart_toEndOf="@id/img_status_light"
+            app:layout_constraintEnd_toEndOf="@id/txt_person_name"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:textColor="@color/white"
+            tools:text="Alive - Human"
+            />
+        <TextView
+            android:id="@+id/txt_title_last_known_loc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Last known location:"
+            app:layout_constraintStart_toStartOf="@id/txt_person_name"
+            app:layout_constraintTop_toBottomOf="@id/img_status_light"
+            app:layout_constraintEnd_toEndOf="@id/txt_person_name"
+
+            android:layout_marginTop="8dp"
+            android:textColor="@color/whitish"
+            />
+        <TextView
+            android:id="@+id/txt_last_known_loc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Earth"
+            app:layout_constraintTop_toBottomOf="@id/txt_title_last_known_loc"
+            app:layout_constraintStart_toStartOf="@id/txt_title_last_known_loc"
+            app:layout_constraintEnd_toEndOf="@id/txt_title_last_known_loc"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
