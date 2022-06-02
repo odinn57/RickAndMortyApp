@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ import com.odinn.rickandmortyapp.model.Result
 
 class PersonListFragment : Fragment() {
     private var mBinding:FragmentPersonListBinding ? = null
+    private val viewModel by viewModels<PersonListViewModel>()
     private val binding get() = mBinding!!
     private lateinit var recyclerView: RecyclerView
     private lateinit var currentPerson:Result
@@ -40,7 +42,6 @@ class PersonListFragment : Fragment() {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(PersonListViewModel::class.java)
         viewModel.getAllCharacters(CURRENT_API_PAGE)
         recyclerView = binding.rvPersonsList
         recyclerView.adapter = adapter
