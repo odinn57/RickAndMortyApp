@@ -40,6 +40,7 @@ class PersonListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
     }
+    //Test
 
     private fun init() {
         viewModel.getAllCharacters(CURRENT_API_PAGE)
